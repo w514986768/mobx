@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
-import request from '../utils/request';
-console.log(request("../package.json"));
 
 export default class Index extends Component{
     render(){
