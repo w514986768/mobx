@@ -7,6 +7,8 @@ react基于webpack和babel以及es6的项目搭建
 
 ###3. npm install
 
-###4. open http://localhost:3000
+###4. npm start
 
-###5. build:  npm run build
+###5. open http://localhost:3000
+
+###6. build:  npm run build
