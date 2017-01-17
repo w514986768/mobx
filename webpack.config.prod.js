@@ -1,6 +1,6 @@
-var path = require('path');
-var webpack = require('webpack');
-var autoprefixer = require('autoprefixer');
+let path = require('path');
+let webpack = require('webpack');
+let autoprefixer = require('autoprefixer');
 
 module.exports = {
   devtool: 'source-map',
@@ -13,6 +13,7 @@ module.exports = {
     publicPath: "/dist/"
   },
   plugins: [
+    new webpack.optimize.CommonsChunkPlugin("common.js"),
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.DefinePlugin({
       'process.env': {
@@ -50,5 +51,5 @@ module.exports = {
         loader: 'file-loader?name=fonts/[name].[ext]'
       }]
   },
-  postcss: [autoprefixer],
+  postcss: [autoprefixer]
 };

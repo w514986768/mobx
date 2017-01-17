@@ -1,0 +1,31 @@
+{
+  "parser": "babel-eslint",
+  "env": {
+    "commonjs": true,
+    "browser": true,
+    "mocha": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "plugins": [
+    "react"
+  ],
+  "rules": {
+    "no-extra-semi": "error",
+    "brace-style": "error",
+    "camelcase": "error",
+    "new-cap": "error",
+    "object-curly-spacing": ["error", "always"],
+    "consistent-return": "error",
+    "eqeqeq": "error",
+    "no-use-before-define": "error",
+    "no-mixed-spaces-and-tabs": "error",
+    "no-dupe-class-members": "error",
+    "no-var": "error"
+  }
+}

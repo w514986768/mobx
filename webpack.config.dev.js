@@ -1,6 +1,6 @@
-var path = require('path');
-var webpack = require('webpack');
-var autoprefixer = require('autoprefixer');
+let path = require('path');
+let webpack = require('webpack');
+let autoprefixer = require('autoprefixer');
 
 module.exports = {
   devtool: 'cheap-module-eval-source-map',
@@ -15,12 +15,20 @@ module.exports = {
     publicPath: "/dist/"
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.optimize.CommonsChunkPlugin("common.js")
   ],
   resolve: {
     extensions: ['', '.js', '.jsx']
   },
   module: {
+    preLoaders: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'eslint-loader'
+      }
+    ],
     loaders:[
       {
         test: /\.js?$/,
@@ -38,12 +46,12 @@ module.exports = {
       },
       {
         test: /\.(png|jpg|jpeg|gif)$/,
-        loader: 'url-loader?limit=8192&name=images/[name].[ext]'
+        loader: 'url-loader?limit=8192&name=/dist/images/[name].[ext]'
       },
       {
         test: /\.(svg|ttf|eot|woff|woff2)([\?]?.*)$/,
-        loader: 'file-loader?name=fonts/[name].[ext]'
+        loader: 'file-loader?name=/dist/fonts/[name].[ext]'
       }]
   },
-  postcss: [autoprefixer],
+  postcss: [autoprefixer]
 };

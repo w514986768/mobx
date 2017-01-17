@@ -6,7 +6,8 @@ export default class Hello extends Component {
     constructor(props){
         super(props);
         this.state = {
-            title: "hello页面"
+            title: "hello页面",
+            array: [1, 2]
         }
     }
     render(){
