@@ -38,11 +38,17 @@ export default class Index extends Component{
                 {
                     loading ?
                         <h1>Loding........</h1> :
-                        list.map((data, index) => {
-                            return <h3 key={index}>{data.title}</h3>
-                        })
+                        <div>
+                            {
+                                list.map((data, index) => {
+                                    return (
+                                        <h3 key={index}>{data.title}</h3>
+                                    )
+                                })
+                            }
+                            <h4>当前总条数:{count},当前页数:{pageNum},总页数:{totalPage}</h4>
+                        </div>
                 }
-                <h4>当前总条数:{count},当前页数:{pageNum},总页数:{totalPage}</h4>
             </div>
         )
     }
