@@ -1,6 +1,6 @@
 {
   "presets": ["es2015", "stage-0", "react"],
-  "plugins": ["transform-runtime"],
+  "plugins": ["transform-runtime","mobx-deep-action","transform-decorators-legacy"],
   "env": {
    "development": {
      "presets": ["react-hmre"]
