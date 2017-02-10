@@ -26,13 +26,8 @@ export default async function request(url, options) {
   const data = await response.json();
 
   const ret = {
-    data,
-    headers: {}
+    data
   };
-
-  if (response.headers.get('x-total-count')) {
-    ret.headers['x-total-count'] = response.headers.get('x-total-count');
-  }
 
   return ret;
 }
